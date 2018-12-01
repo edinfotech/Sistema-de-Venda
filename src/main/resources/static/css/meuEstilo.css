@@ -1,0 +1,45 @@
+
+body{
+	margin:0;
+	padding:0;
+	background-size: contain;
+	background-image:url("../imagens/fundo.jpg");
+}	
+
+#Titulo{
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image:url("../imagens/logoEmpresa.png");
+	width: 70px;
+	height: 50px;
+}
+th{
+	background-color:blue;
+	color:white;
+}
+td{
+	color:#00BFFF;
+}
+#Marca{
+	background-color:blue;
+	color:white;
+	
+}
+.footer-copyright{
+	margin-bottom: 1px;
+	background-color:black;
+	text-align: center;
+}
+
+h1{
+	color:white;
+}
+label{
+		color:white;
+}
+.carousel {
+	width: 100%;
+	padding-bottom:0; 
+	
+}
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>Sistema de Vendas</title>
+
+	<!-- Import do AngularJS-->
+	<script src="js/angular.min.js"></script>
+	
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- CSS -->
+    <link href="css/meuEstilo.css" rel="stylesheet">
+
+   
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body id="mybody">
+  <div class = "container">
+		<div ng-include src="'menus.html'"></div>
+		
+		
+		<h1 align ="center">Consulta de Estoque</h1>
+			<form class="form-horizontal">
+			<div class="form-group">
+			<label for="codigo" class="col-sm-2 control-label">codigo</label>
+			<div class="col-sm-2">
+			<input type="text" class="form-control" id="txcodigo" placeholder="">
+			
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="descricao" class="col-sm-2 control-label">Descrição</label>
+			  <div class="col-sm-8">
+			<input type="text" class="form-control" id="txdescricao" placeholder="">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="categoria" class="col-sm-2 control-label">Categoria</label>
+			   <div class="col-sm-8">
+				
+				<input type="text" class="form-control" id="txcategoria" placeholder="categoria">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="ean" class="col-sm-2 control-label">EAN</label>
+			   <div class="col-sm-3">
+				<input type="text" class="form-control" id="txean" placeholder="ean">   
+				</div>
+				</div>
+				<div class="form-group">
+				<label for="fornecedor" class="col-sm-2 control-label">Fornecedor</label>
+				<div class="col-sm-5">
+				<input type="text" class="form-control" id="txfornecedor" placeholder="fornecedor">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="valor" class="col-sm-2 control-label">Valor </label>
+			  <div class="col-sm-5">
+				
+				<input type="text" class="form-control" id="txvalor" placeholder="valor R$">
+			  </div>
+			  </div>
+			   <div class="form-group">
+			  <label for="quantidade" class="col-sm-2 control-label">Quantidade </label>
+			  <div class="col-sm-5">
+				
+				<input type="text" class="form-control" id="txquantidade" placeholder="quantidade">
+			  </div>
+			  </div>
+			  <div align ="center"  class="form-group">
+				<button align ="center" type="submit" class="btn btn-primary" >Novo</button>
+			    <button align ="center" type="submit" class="btn btn-success" >Gravar</button>
+				<button align ="center" type="submit" class="btn btn-danger" >Excluir</button>
+				</div>
+				
+				<div class="form-group">
+				<label for "codigo" class="col-sm-2 control-label"> Código </label>
+				<div class="col-sm-1">
+				<input type="text"  class="form-control" id="txpesquisa" placeholder="">
+				</div>
+				<label for "descricao" class="col-sm-1 control-label"> Descrição </label>
+				<div class="col-sm-4">
+				<input type="text"  class="form-control" id="txdescricao" placeholder="">
+				</div>
+				</div>
+			  
+			 
+			</form>
+				
+				<table class="table table-striped table table-hover">
+				  <th>Código</th>
+				  <th>Descrição</th>
+				  <th>Valor</th>
+				  <th>Quantidade</th>
+				  <tr>
+				  <td>1</td>
+				  <td>Edivanio</td>
+				  <td>edinfosuporte@gmail.com</td>
+				  </tr>
+				</table>
+					
+     <!-- FOOTER -->
+	<div ng-include="'footer.html'"></div>
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

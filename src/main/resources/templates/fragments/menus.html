@@ -1,0 +1,44 @@
+
+	
+  <nav th:fragment="menu" class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+				
+              </div>
+            <div id="navbar" class="navbar-collapse collapse">
+			<label id="Titulo" align ="left" class="nav navbar-nav"></label>
+			<a id ="Marca" href ="/" class="navbar-brand" >Sistema de Vendas</a>
+              <ul class="nav navbar-nav">
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastrar <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="/CadCliente/cadastrar">Cliente</a></li>
+                    <li><a href="/CadProduto/cadastrar">Produto</a></li>
+                    <li><a href="/CadFornecedor/cadastrar">Fornecedor</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/CadFuncionario/cadastrar">Funcionario</a></li>                 
+                  </ul>
+                </li>
+                <li><a href="#about">Vendas</a></li>
+                <li><a href="Estoque">Estoque</a></li>
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatorios <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Produto</a></li>
+                    <li><a href="#">Fornecedor</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Funcionario</a></li>                  
+                  </ul>
+                </li>
+				<li><a href="#contact">Suporte</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>

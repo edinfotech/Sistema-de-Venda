@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+  <head>
+    <meta charset="utf-8">
+   
+  </head>
+
+  <body>
+       
+    	<section class="layout-content" layout:fragment="corpo">
+       
+		<h1 align ="center">Cadastro de Clientes</h1>
+			<form class="form-horizontal">
+			<div class="form-group">
+			<label for="codigo" class="col-sm-2 control-label">codigo</label>
+			<div class="col-sm-2">
+			<input type="text" class="form-control" id="txcodigo" placeholder="codigo">
+			
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="nome" class="col-sm-2 control-label">Nome</label>
+			  <div class="col-sm-8">
+			<input type="text"  required  class="form-control" id="txnome" placeholder="nome">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="endereco" class="col-sm-2 control-label">Endereço</label>
+			   <div class="col-sm-8">
+				
+				<input type="text" class="form-control" id="txendereco" placeholder="endereco">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="cidade" class="col-sm-2 control-label">Cidade</label>
+			   <div class="col-sm-3">
+				<input type="text"  class="form-control" id="txcidade" placeholder="cidade">   
+				</div>
+				</div>
+				<div class="form-group">
+				<label for="email" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-5">
+				<input type="text" class="form-control" id="txemail" placeholder="email">
+			  </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="telefone" class="col-sm-2 control-label">Telefone</label>
+			  <div class="col-sm-5">
+				
+				<input type="text"  class="form-control" id="txtelefone" placeholder="telefone">
+			  </div>
+			  </div>
+			  <div align ="center"  class="form-group">
+				<button align ="center" type="submit"  class="btn btn-primary" >Novo</button>
+			    <button align ="center" type="submit"  class="btn btn-success" >Gravar</button>
+				<button align ="center" type="submit"  class="btn btn-danger" >Excluir</button>
+				<input type="text" id="txpesquisa" placeholder="pesquisar cadastros">
+			  </div>
+			 
+			</form>
+				
+				<table class="table table-striped table table-hover">
+				  <th>Código</th>
+				  <th>Nome</th>
+				  <th>Email</th>
+				  <tr>
+				  <td>{{tabelaCliente.codigo}}</td>
+				  <td>{{tabelaCliente.nome}}</td>
+				  <td>{{tabelaCliente.email}}</td>
+				  </tr>
+				</table>
+				
+		</section>
+
+  </body>
+</html>
