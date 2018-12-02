@@ -1,44 +1,73 @@
 
-	
-  <nav th:fragment="menu" class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-				
-              </div>
-            <div id="navbar" class="navbar-collapse collapse">
-			<label id="Titulo" align ="left" class="nav navbar-nav"></label>
-			<a id ="Marca" href ="/" class="navbar-brand" >Sistema de Vendas</a>
-              <ul class="nav navbar-nav">
-				<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastrar <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                   <li><a href="/CadCliente/cadastrar">Cliente</a></li>
-                    <li><a href="/CadProduto/cadastrar">Produto</a></li>
-                    <li><a href="/CadFornecedor/cadastrar">Fornecedor</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/CadFuncionario/cadastrar">Funcionario</a></li>                 
-                  </ul>
-                </li>
-                <li><a href="#about">Vendas</a></li>
-                <li><a href="Estoque">Estoque</a></li>
-				<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatorios <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Cliente</a></li>
-                    <li><a href="#">Produto</a></li>
-                    <li><a href="#">Fornecedor</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Funcionario</a></li>                  
-                  </ul>
-                </li>
-				<li><a href="#contact">Suporte</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+<nav th:fragment="menu" class="navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark">
+ 
+  <label id="Titulo" class="navbar-brand"></label>
+  <a  href ="/" class="navbar-brand" >Sistema de Vendas</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Cadastros
+        </a>
+        
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        			<li class="dropdown-submenu">
+        			<a class="dropdown-item dropdown-toggle" href="#"> Clientes </a>
+                   		<ul class="dropdown-menu">
+        				 <a  class="dropdown-item" href="/cadastros/cliente/cadastrar">Cadastro</a>
+                         <a  class="dropdown-item" href="/cadastros/cliente/consultar">Consulta</a>
+         				  
+         				</ul>  
+         				 <li role="separator" class="divider"></li>
+         				 <li class="dropdown-submenu">
+         			<a class="dropdown-item dropdown-toggle" href="#">Funcionários </a>
+                   		<ul class="dropdown-menu">
+        				 <a  class="dropdown-item" href="/cadastros/funcionario/cadastrar">Cadastro</a>
+                         <a  class="dropdown-item" href="/cadastros/funcionario/consultar">Consulta</a>
+         				  
+         				</ul> 
+         				</li>
+         				 <li role="separator" class="divider"></li>
+         				 <li class="dropdown-submenu">
+         			<a class="dropdown-item dropdown-toggle" href="#"> Fornecedores </a>
+                   		<ul class="dropdown-menu">
+        				   <a  class="dropdown-item" href="/cadastros/fornecedor/cadastrar">Cadastro</a>
+                           <a  class="dropdown-item" href="/cadastros/fornecedor/consultar">Consulta</a>
+         				  
+         				</ul>   
+         				 <li role="separator" class="divider"></li>
+         				 <li class="dropdown-submenu">
+         			<a class="dropdown-item dropdown-toggle" href="#"> Produtos </a>
+                   		<ul class="dropdown-menu">
+        				   <a  class="dropdown-item" href="/CadProduto/cadastrar">Cadastro</a>
+                           <a  class="dropdown-item" href="/ConProduto/consulta">Consulta</a>
+         				  
+         				</ul>  
+         		    </li>
+         		 </ul>
+         	</li>
+         	    <li class="navbar-nav"><a class="nav-link" href="#">Vendas</a></li>
+         	    <li class="navbar-nav"><a class="nav-link" href="#">Estoque</a></li>
+         	    
+         	    <li class="nav-item dropdown">
+        			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" 
+       				 aria-haspopup="true" aria-expanded="false">  Relatorios</a>
+       				 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        			
+     					  <li><a  class="dropdown-item" href="#">Cliente</a></li>
+         	              <li><a  class="dropdown-item" href="#">Fornecedor</a></li>
+         	              <li><a  class="dropdown-item" href="#">Funcionario</a></li>
+         	              <li><a  class="dropdown-item" href="#">Produto</a></li>
+         	   		</ul>
+         	  	 </li>
+         	  	 <li class="navbar-nav"><a class="nav-link" href="#">Suporte</a></li>
+         </ul>
+       </div>
+      
+</nav>

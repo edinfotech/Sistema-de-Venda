@@ -8,57 +8,72 @@
   <body >
 	<div class = "container">
 	<section class="layout-content" layout:fragment="corpo">
-	
-
-		<h1 align ="center">Cadastro de Fornecedor</h1>
+	    	
+    	<br/>
+           <nav class="navbar navbar-expand-md bg-dark">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                       
+	                        <span class="tituloForm">Cadastrar Fornecedor</span>
+	                    </li>
+	                </ul>
+	            </div>
+	            <a class="btn btn-primary btn-md" href="/cadastros/cliente/consultar" role="button">
+	                <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
+	                <span>Consultar fornecedores</span>
+	            </a>
+	        </nav>
+	           <br/>
+	            <br/>
 			<form class="form-horizontal">
-			<div class="form-group">
+			<div class="form-group row">
 			<label for="codigo" class="col-sm-2 control-label">codigo</label>
 			<div class="col-sm-2">
 			<input type="text" class="form-control" id="txcodigo" placeholder="codigo">
 			
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			<label for="cnpj" class="col-sm-2 control-label">CNPJ</label>
 			<div class="col-sm-2">
 			<input type="text" class="form-control" id="txcnpj" placeholder="cnpj">
 			
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			<label for="ie" class="col-sm-2 control-label">Inscrição Estadual</label>
 			<div class="col-sm-2">
 			<input type="text" class="form-control" id="txie" placeholder="Inscrição estadual">
 			
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			  <label for="nome" class="col-sm-2 control-label">Nome</label>
 			  <div class="col-sm-8">
 			<input type="text" class="form-control" id="txnome" placeholder="nome">
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			  <label for="endereco" class="col-sm-2 control-label">Endereço</label>
 			   <div class="col-sm-8">
 				
 				<input type="text" class="form-control" id="txendereco" placeholder="endereco">
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			  <label for="cidade" class="col-sm-2 control-label">Cidade</label>
 			   <div class="col-sm-3">
 				<input type="text" class="form-control" id="txcidade" placeholder="cidade">   
 				</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group row">
 				<label for="email" class="col-sm-2 control-label">Email</label>
 				<div class="col-sm-5">
 				<input type="text" class="form-control" id="txemail" placeholder="email">
 			  </div>
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group row">
 			  <label for="telefone" class="col-sm-2 control-label">Telefone</label>
 			  <div class="col-sm-5">
 				
@@ -66,23 +81,13 @@
 			  </div>
 			  </div>
 			  <div align ="center"  class="form-group">
-				<button align ="center" type="submit" class="btn btn-primary" >Novo</button>
-			    <button align ="center" type="submit" class="btn btn-success" >Gravar</button>
-				<button align ="center" type="submit" class="btn btn-danger" >Excluir</button>
-				<input type="text" id="txpesquisa" placeholder="pesquisar cadastros">
+				
+			    <button type="submit" class="btn btn-success" >Gravar</button>
+				
 			  </div>
 			 
 			</form>
 		
-				<table class="table table-striped table table-hover">
-				  <th>Código</th>
-				  <th>Nome</th>
-				  <th>Email</th>
-				  <tr>
-				  <td>1</td>
-				  <td>Edivanio</td>
-				  <td>edinfosuporte@gmail.com</td>
-				  </tr>
-				</table>
+			
   </body>
 </html>

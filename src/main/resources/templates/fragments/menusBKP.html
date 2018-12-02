@@ -1,0 +1,67 @@
+
+	
+  <nav th:fragment="menu" class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+     <div class="container">
+     <label id="Titulo" align ="left" class="navbar-brand"></label>
+	 <a  href ="/" class="navbar-brand" >Sistema de Vendas</a>
+			  
+         <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+        	 <div class="collapse navbar-collapse" id="navbarNav">
+	
+              <ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">Cadastros</a> 
+			      <div class="dropdown-menu">
+			     		 <a href="#" class="dropdown-item"> Cliente</a>
+                   <div class="dropdown-menu">
+                                  <a  class="dropdown-item" href="/CadCliente/cadastrar">Cadastro</a>
+                                  <a  class="dropdown-item" href="/CadCliente/consulta">Consulta</a>
+                    </div>
+                    </div>
+                    </li>              
+                    </ul>
+                    
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Fornecedor</a>
+                    <ul class="dropdown-menu">
+                                  <li> <a  href="/CadFornecedor/cadastrar">Cadastro</a></li>
+                                  <li> <a  href="/CadFornecedor/consulta">Consulta</a></li>
+                    </ul>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Funcionário</a>
+                    <ul class="dropdown-menu">
+                                  <li> <a  href="/CadFuncionario/cadastrar">Cadastro</a></li>
+                                  <li> <a  href="/CadFuncionario/consulta">Consulta</a></li>
+                    </ul>
+                    </li>
+                    
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Produto</a>
+                    <ul class="dropdown-menu">
+                                  <li> <a  href="/CadProduto/cadastrar">Cadastro</a></li>
+                                  <li> <a  href="/CadProduto/consulta">Consulta</a></li>
+                    </ul>
+                    </li>
+                                     
+                  </ul>
+              
+                <li><a href="#about">Vendas</a></li>
+                <li><a href="Estoque">Estoque</a></li>
+				<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatorios <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Produto</a></li>
+                    <li><a href="#">Fornecedor</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Funcionario</a></li>                  
+                  </ul>
+                </li>
+				<li><a href="#contact">Suporte</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>

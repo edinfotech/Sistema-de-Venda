@@ -13,18 +13,20 @@
 
 	<!-- Bootstrap core CSS -->
 	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-	
+	<link th:href="@{/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css}" rel="stylesheet" />
 	
 	<!-- Custom styles for this template -->
 	<link th:href="@{/css/meuEstilo.css}" rel="stylesheet" />
-	<link th:href="@{/css/carousel2.css}" rel="stylesheet" />
+	<link th:href="@{/css/carousel.css}" rel="stylesheet" />
   </head>
 
   <body>
-  		<div class="container">
-  		
-  		<div th:replace="fragments/menus :: menu">
+  <div class="container">
+  <div th:replace="fragments/menus :: menu">
   		</div>
+  		
+  		
+  		
  		
 		<section layout:fragment="corpo">
 			<div></div>
@@ -66,5 +68,24 @@
 		});
 
 	</script>
+	
+	<script type="text/javascript">
+	$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+		  if (!$(this).next().hasClass('show')) {
+		    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+		  }
+		  var $subMenu = $(this).next(".dropdown-menu");
+		  $subMenu.toggleClass('show');
+
+
+		  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+		    $('.dropdown-submenu .show').removeClass("show");
+		  });
+
+
+		  return false;
+		});
+	</script>
+	
   </body>
 </html>
