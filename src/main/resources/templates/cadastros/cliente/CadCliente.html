@@ -36,23 +36,84 @@
 			  </div>
 			  <div class="form-group row">
 			  <label for="nome" class="col-sm-2 control-label">Nome</label>
-			  <div class="col-sm-8">
+			  <div class="col-sm-7">
 			<input type="text"  required  class="form-control" id="txnome" placeholder="nome">
 			  </div>
 			  </div>
 			  <div class="form-group row">
 			  <label for="endereco" class="col-sm-2 control-label">Endereço</label>
-			   <div class="col-sm-8">
+			   <div class="col-sm-7">
 				
-				<input type="text" class="form-control" id="txendereco" placeholder="endereco">
+				<input type="text" class="form-control" id="txendereco" placeholder="endereço">
 			  </div>
 			  </div>
+			  <div class="form-group row">
+			  <label for="endereco" class="col-sm-2 control-label">Bairro</label>
+			   <div class="col-sm-4">
+				
+				<input type="text" class="form-control" id="txbairro" placeholder="bairro">
+			  </div>
+			  
+			  <label for="numero" class="col-sm-1 control-label">Numero</label>
+			   <div class="col-sm-2">
+				
+				<input type="text" class="form-control" id="txnumero" placeholder="numero">
+			  </div>
+			  
+			  </div>
+			  
 			  <div class="form-group row">
 			  <label for="cidade" class="col-sm-2 control-label">Cidade</label>
 			   <div class="col-sm-3">
 				<input type="text"  class="form-control" id="txcidade" placeholder="cidade">   
 				</div>
-				</div>
+				<div class="form-group row">
+				<label for="uf" class="col-sm-2 control-label">UF</label>
+	                     <div class="col-sm-8">   
+	                        <select id="uf" class="form-control" name="endereco.uf">
+	                            <option value="">UF</option>
+	                            <option value="AC">AC</option>
+	                            <option value="AL">AL</option>
+	                            <option value="AM">AM</option>
+	                            <option value="BA">BA</option>
+	                            <option value="CE">CE</option>
+	                            <option value="DF">DF</option>
+	                            <option value="ES">ES</option>
+	                            <option value="GO">GO</option>
+	                            <option value="MA">MA</option>
+	                            <option value="MT">MT</option>
+	                            <option value="MS">MS</option>
+	                            <option value="MG">MG</option>
+	                            <option value="PA">PA</option>
+	                            <option value="PB">PB</option>
+	                            <option value="PR">PR</option>
+	                            <option value="PE">PE</option>
+	                            <option value="PI">PI</option>
+	                            <option value="RJ">RJ</option>
+	                            <option value="RN">RN</option>
+	                            <option value="RS">RS</option>
+	                            <option value="RO">RO</option>
+	                            <option value="RR">RR</option>
+	                            <option value="SC">SC</option>
+	                            <option value="SP">SP</option>
+	                            <option value="SE">SE</option>
+	                            <option value="TO">TO</option>
+	                        </select>
+	                        <div class="invalid-feedback">
+							
+	                        </div>
+	                        </div>
+	                        </div>
+	                          <div class="form-group row">
+			  					<label for="cep" class="col-sm-2 control-label">Cep</label>
+								   <div class="col-sm-6">
+									<input type="text"  class="form-control" id="txcep" data-mask="00000-000" placeholder="cep">   
+									</div>
+	          						  </div>
+	          						  </div>
+	            
+	            
+				
 				<div class="form-group row">
 				<label for="email" class="col-sm-2 control-label">Email</label>
 				<div class="col-sm-5">
@@ -61,9 +122,9 @@
 			  </div>
 			  <div class="form-group row">
 			  <label for="telefone" class="col-sm-2 control-label">Telefone</label>
-			  <div class="col-sm-5">
+			  <div class="col-sm-3">
 				
-				<input type="text"  class="form-control" id="txtelefone" placeholder="telefone">
+				<input type="text"   class="form-control" id="txtelefone" placeholder="telefone" data-mask="(00)00000-0000">
 			  </div>
 			  </div>
 			  <div align ="center"  class="form-group">

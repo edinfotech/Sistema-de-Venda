@@ -40,11 +40,10 @@
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script th:src="@{/webjars/jquery-mask-plugin/dist/jquery.mask.min.js}"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
 	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
 	    
@@ -67,9 +66,6 @@
 		    })
 		});
 
-	</script>
-	
-	<script type="text/javascript">
 	$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 		  if (!$(this).next().hasClass('show')) {
 		    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
@@ -85,6 +81,8 @@
 
 		  return false;
 		});
+	function img1(obj){img1=document.formProd.foto_gal.valuedocument.formProd.capa.src=img1}
+	
 	</script>
 	
   </body>

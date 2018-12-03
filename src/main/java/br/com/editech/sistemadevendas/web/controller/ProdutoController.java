@@ -5,11 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/CadProduto")
+@RequestMapping("/cadastros/produto")
 public class ProdutoController {
 
 	@GetMapping("/cadastrar")
 	public String cadastrar() {
-		return "cadastros/CadProduto";
+		return "cadastros/produto/CadProduto";
+	}
+	
+	@GetMapping("/consultar")
+	public String consultar() {
+		return "cadastros/produto/ConProduto";
 	}
 }
