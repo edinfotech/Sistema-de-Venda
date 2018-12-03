@@ -71,6 +71,27 @@ body {
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+@media(max-width:767px) {
+        .carousel-inner>.item>a>img, .carousel-inner>.item>img{
+            width: 100%;
+            height: 240px;
+    }
+
+@media(max-width:450px) {
+        .carousel-inner>.item>a>img, .carousel-inner>.item>img{
+            width: 100%;
+            height: 269px;
+}
+
+@media(max-width:320px) {
+        .carousel-inner>.item>a>img, .carousel-inner>.item>img{
+            width: 100%;
+            height: 240px;
+}
+
+
+
+
 
 @media (min-width: 40em) {
   /* Bump up size of carousel content */

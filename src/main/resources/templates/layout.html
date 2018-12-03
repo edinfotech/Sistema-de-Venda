@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
- 				xmlns:th="http://www.thymeleaf.org"
-				xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
-  <head>
-	<title>Sistema de venda com controle de estoque</title>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
-	<link rel="icon" th:href="@{/image/favicon.png}" />
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Sistema de venda com controle de estoque</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" th:href="@{/image/favicon.png}" />
 
-	<!-- Bootstrap core CSS -->
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-	<link th:href="@{/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css}" rel="stylesheet" />
-	
-	<!-- Custom styles for this template -->
-	<link th:href="@{/css/meuEstilo.css}" rel="stylesheet" />
-	<link th:href="@{/css/carousel.css}" rel="stylesheet" />
-  </head>
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link
+	th:href="@{/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css}"
+	rel="stylesheet" />
 
-  <body>
-  <div class="container">
-  <div th:replace="fragments/menus :: menu">
-  		</div>
-  		
-  		
-  		
- 		
+<!-- Custom styles for this template -->
+<link th:href="@{/css/meuEstilo.css}" rel="stylesheet" />
+<link th:href="@{/css/carousel.css}" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="container">
+		<div th:replace="fragments/menus :: menu"></div>
+
+
+
+
 		<section layout:fragment="corpo">
 			<div></div>
-			</section>	
-		
-		
-		<div th:replace="fragments/footer :: footer"> </div>
-	
-		</div>
-<!-- Bootstrap core JavaScript
+		</section>
+
+
+		<div th:replace="fragments/footer :: footer"></div>
+
+	</div>
+	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-    <script src="/webjars/jquery/jquery.min.js"></script>
+
+	<script src="/webjars/jquery/jquery.min.js"></script>
 	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-	<script	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
-	    
-		var url ='';
-		$('button[id*="btn_"]').click(function(){
-			url = "/" + $(this).attr('id').split("_")[1];			
+		var url = '';
+		$('button[id*="btn_"]').click(function() {
+			url = "/" + $(this).attr('id').split("_")[1];
 		});
-		
-		$('#ok_confirm').click(function(){
-			document.location.href= url;
+
+		$('#ok_confirm').click(function() {
+			document.location.href = url;
 		});
-	
+
 		$(function() {
 			$('[data-toggle="popover"]').popover();
 		});
-		
-		$(document).ready(function(){
-		    $(".navbar-toggle").click(function(){
-		        $(".sidebar").toggleClass("sidebar-open");
-		    })
+
+		$(document).ready(function() {
+			$(".navbar-toggle").click(function() {
+				$(".sidebar").toggleClass("sidebar-open");
+			})
 		});
 
-	$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-		  if (!$(this).next().hasClass('show')) {
-		    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-		  }
-		  var $subMenu = $(this).next(".dropdown-menu");
-		  $subMenu.toggleClass('show');
+		$('.dropdown-menu a.dropdown-toggle').on(
+				'click',
+				function(e) {
+					if (!$(this).next().hasClass('show')) {
+						$(this).parents('.dropdown-menu').first().find('.show')
+								.removeClass("show");
+					}
+					var $subMenu = $(this).next(".dropdown-menu");
+					$subMenu.toggleClass('show');
 
+					$(this).parents('li.nav-item.dropdown.show').on(
+							'hidden.bs.dropdown',
+							function(e) {
+								$('.dropdown-submenu .show')
+										.removeClass("show");
+							});
 
-		  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-		    $('.dropdown-submenu .show').removeClass("show");
-		  });
+					return false;
+				});
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
 
-
-		  return false;
-		});
-	function img1(obj){img1=document.formProd.foto_gal.valuedocument.formProd.capa.src=img1}
-	
+				reader.onload = function(e) {
+					$('#blah').attr('src', e.target.result).width(180).height(
+							auto);
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
 	</script>
-	
-  </body>
+
+</body>
 </html>

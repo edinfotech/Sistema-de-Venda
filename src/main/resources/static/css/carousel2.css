@@ -78,6 +78,26 @@ body {
   margin-left: 10px;
 }
 
+/* imagens responsivas */
+.carousel,
+.item,
+.active {
+height: 100%;
+height: 500px;
+}
+.item img{
+width: 100%;
+height: 600px;
+}
+a.left{
+box-shadow: 0px;
+}
+a.left:hover{
+box-shadow: 0px;
+}
+.carousel-inner {
+height: 100%;
+}
 
 /* Featurettes
 ------------------------- */

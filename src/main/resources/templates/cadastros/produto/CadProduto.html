@@ -101,41 +101,48 @@
 						</select>
 
 					</div>
+				</div>
+				<div class="form-group row">
+
+					<label for="precoVenda" class="col-sm-2 control-label">Preço
+						de venda</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="txprecoVenda"
+							data-mask="#.##0,00">
 					</div>
-					<div class="form-group row">
-					
-						<label for="precoVenda" class="col-sm-2 control-label">Preço de venda</label>
-						<div class="col-sm-2">
-							<input type="text" class="form-control" id="txprecoVenda"
-								data-mask="#.##0,00" >
-						</div>
-						
-						<label for="precoCusto" class="col-sm-2 control-label">Preço de Custo</label>
-						<div class="col-sm-2">
-							<input type="text" class="form-control" id="txprecoCusto"
-								data-mask="#.##0,00" >
-						</div>
-						
+
+					<label for="precoCusto" class="col-sm-2 control-label">Preço
+						de Custo</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="txprecoCusto"
+							data-mask="#.##0,00">
 					</div>
-				
+
+				</div>
+
 
 
 
 				<div class="form-group row">
-					<label for="txestoque" class="col-sm-2 control-label">Quantidade no Estoque</label>
+					<label for="txestoque" class="col-sm-2 control-label">Quantidade
+						no Estoque</label>
 					<div class="col-sm-3">
-						<input type="text" disabled="disabled" class="form-control" id="txestoque">
+						<input type="text" disabled="disabled" class="form-control"
+							id="txestoque">
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="telefone" class="col-sm-2 control-label">Imagem do Produto</label>
-					<div class="col-sm-1">
+					<label for="telefone" class="col-sm-2 control-label">Imagem
+						do Produto</label>
+					<div>		
+							<input type="file" id="realupload"
+							name="realupload" class=" col-sm-2 control-label realupload" accept="image/*"
+							onChange="readURL(this);" />
 
-						<input name="foto_gal_<%= cnt1 %>" type="file" id="foto_gal" onChange="img1()" size="100px" />
 					</div>
+					
 					<div class="col-sm-4">
-					
-					
+						<img src="imagem inicial antes do cara selecionar alguma" class="col-sm-6 control-label" id="blah" /> 
 					</div>
 					
 				</div>
@@ -145,7 +152,7 @@
 
 				</div>
 			</form>
-			</div>
-			</section>
+		</div>
+	</section>
 </body>
 </html>
