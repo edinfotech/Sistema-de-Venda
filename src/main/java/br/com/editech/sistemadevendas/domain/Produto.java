@@ -1,10 +1,9 @@
 package br.com.editech.sistemadevendas.domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -18,6 +17,7 @@ public class Produto extends AbstractEntity<Long> {
 	private String grupo;
 	private String subgrupo;
 	
+	@ManyToOne
 	@JoinColumn(name ="idFornecedor")
 	private Fornecedor fornecedor;
 	
@@ -25,15 +25,8 @@ public class Produto extends AbstractEntity<Long> {
 	private String precoCusto;
 	private String imagem;
 	
-	@OneToMany(mappedBy = "fornecedor")
-	private List<Venda> venda;
-	
-	public List<Venda> getVenda() {
-		return venda;
-	}
-	public void setVenda(List<Venda> venda) {
-		this.venda = venda;
-	}
+
+
 	public String getEan() {
 		return ean;
 	}

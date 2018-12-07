@@ -5,12 +5,8 @@ import org.springframework.stereotype.Repository;
 import br.com.editech.sistemadevendas.domain.Cliente;
 
 @Repository
-public class ClienteDaoImpl extends AbstractDao<Cliente,  Long>  implements ClienteDao{
+public class ClienteDaoImpl extends DaoGenerico<Cliente,  Long>  implements ClienteDao{
 
-	@Override
-	public void delete(Cliente cliente) {
-		
-		
-	}
+	
 
 }

@@ -1,6 +1,7 @@
 package br.com.editech.sistemadevendas.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity

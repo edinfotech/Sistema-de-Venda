@@ -2,6 +2,8 @@ package br.com.editech.sistemadevendas.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
@@ -11,11 +13,13 @@ public class Venda extends AbstractEntity<Long> {
 
 	private String codigoVenda;
 	
+	@ManyToOne
 	@JoinColumn(name ="idCliente")
-	private Integer idCliente;
+	private Cliente cliente;
 	
+	@ManyToOne
 	@JoinColumn(name ="idProduto")
-	private Integer idProduto;
+	private Produto produto;
 	
 	private Integer quantidade;
 
@@ -27,20 +31,22 @@ public class Venda extends AbstractEntity<Long> {
 		this.codigoVenda = codigoVenda;
 	}
 
-	public Integer getIdCliente() {
-		return idCliente;
+	
+
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
-	public Integer getIdProduto() {
-		return idProduto;
+	public Produto getProduto() {
+		return produto;
 	}
 
-	public void setIdProduto(Integer idProduto) {
-		this.idProduto = idProduto;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 	public Integer getQuantidade() {

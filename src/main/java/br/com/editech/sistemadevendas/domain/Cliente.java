@@ -1,8 +1,7 @@
 package br.com.editech.sistemadevendas.domain;
 
-import java.util.List;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
@@ -17,15 +16,15 @@ public class Cliente extends AbstractEntity<Long>{
 	private String cidade;
 	private String email;
 	private String telefone;
+	private String cep;
 	
-	@OneToMany(mappedBy = "cliente")
-	private List<Venda> venda;
 	
-	public List<Venda> getVenda() {
-		return venda;
+
+	public String getCep() {
+		return cep;
 	}
-	public void setVenda(List<Venda> venda) {
-		this.venda = venda;
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 	public String getNome() {
 		return nome;
