@@ -26,55 +26,57 @@
 	        </nav>
 	           <br/>
 	            <br/>
-				<form class="form-horizontal">
+				<form class="form-horizontal" th:action="${fornecedor.id == null} ? @{/cadastros/fornecedor/salvar} : 
+				@{/cadastros/fornecedor/editar}" th:object="${fornecedor}" method="POST">
 			
-			<div class="form-group row">  
-			<label for="codigo" class="col-sm-2 control-label">codigo</label>
-			<div class="col-sm-2">
-			<input type="text" class="form-control" id="txcodigo" placeholder="codigo">
 			
-			  </div>
-			  </div>
 			  <div class="form-group row">
 			  <label for="nome" class="col-sm-2 control-label">Nome Fantasia</label>
 			  <div class="col-sm-7">
-			<input type="text"  required  class="form-control" id="txnome" placeholder="nome">
+			<input type="text"  required  class="form-control" id="txnome" placeholder="nome"
+			th:field="*{nomeFantasia}"/>
 			  </div>
 			  </div>
 			    <div class="form-group row">
 			  <label for="nome" class="col-sm-2 control-label">Razão Social</label>
 			  <div class="col-sm-7">
-			<input type="text"  required  class="form-control" id="txrazao" placeholder="Razão social">
+			<input type="text"  required  class="form-control" id="txrazao" placeholder="Razão social"
+			th:field="*{razao}"/>
 			  </div>
 			  </div>
 			    <div class="form-group row">
 			  <label for="nome" class="col-sm-2 control-label">CNPJ</label>
 			  <div class="col-sm-3">
-			<input type="text"  required  class="form-control" id="txcnpj" placeholder="CNPJ">
+			<input type="text"  required  class="form-control" id="txcnpj" placeholder="CNPJ" data-mask="00.000.000/0000-00" 
+			th:field="*{cnpj}"/>
 			  </div>
 			  <label for="nome" class="col-sm-1 control-label">Inscrição Estadual</label>
 			   <div class="col-sm-3">
-			<input type="text"  required  class="form-control" id="txie" placeholder="Inscrição Estadual">
+			<input type="text"  required  class="form-control" id="txie" placeholder="Inscrição Estadual" data-mask="000.000.000.000" 
+			th:field="*{inscricao}"/>
 			  </div>
 			  </div>
 			  <div class="form-group row">
 			  <label for="endereco" class="col-sm-2 control-label">Endereço</label>
 			   <div class="col-sm-7">
 				
-				<input type="text" class="form-control" id="txendereco" placeholder="endereço">
+				<input type="text" class="form-control" id="txendereco" placeholder="endereço"
+				th:field="*{endereco}"/>
 			  </div>
 			  </div>
 			  <div class="form-group row">
 			  <label for="endereco" class="col-sm-2 control-label">Bairro</label>
 			   <div class="col-sm-4">
 				
-				<input type="text" class="form-control" id="txbairro" placeholder="bairro">
+				<input type="text" class="form-control" id="txbairro" placeholder="bairro"
+				th:field="*{bairro}"/>
 			  </div>
 			  
 			  <label for="numero" class="col-sm-1 control-label">Numero</label>
 			   <div class="col-sm-2">
 				
-				<input type="text" class="form-control" id="txnumero" placeholder="numero">
+				<input type="text" class="form-control" id="txnumero" placeholder="numero"
+				th:field="*{numero}"/>
 			  </div>
 			  
 			  </div>
@@ -82,39 +84,16 @@
 			  <div class="form-group row">
 			  <label for="cidade" class="col-sm-2 control-label">Cidade</label>
 			   <div class="col-sm-3">
-				<input type="text"  class="form-control" id="txcidade" placeholder="cidade">   
+				<input type="text"  class="form-control" id="txcidade" placeholder="cidade"
+				th:field="*{cidade}"/>   
 				</div>
-				<div class="form-group row">
+					<div class="form-group row">
 				<label for="uf" class="col-sm-2 control-label">UF</label>
 	                     <div class="col-sm-8">   
-	                        <select id="uf" class="form-control" name="endereco.uf">
+	                        <select id="uf" class="form-control" th:field="*{uf}">
 	                            <option value="">UF</option>
-	                            <option value="AC">AC</option>
-	                            <option value="AL">AL</option>
-	                            <option value="AM">AM</option>
-	                            <option value="BA">BA</option>
-	                            <option value="CE">CE</option>
-	                            <option value="DF">DF</option>
-	                            <option value="ES">ES</option>
-	                            <option value="GO">GO</option>
-	                            <option value="MA">MA</option>
-	                            <option value="MT">MT</option>
-	                            <option value="MS">MS</option>
-	                            <option value="MG">MG</option>
-	                            <option value="PA">PA</option>
-	                            <option value="PB">PB</option>
-	                            <option value="PR">PR</option>
-	                            <option value="PE">PE</option>
-	                            <option value="PI">PI</option>
-	                            <option value="RJ">RJ</option>
-	                            <option value="RN">RN</option>
-	                            <option value="RS">RS</option>
-	                            <option value="RO">RO</option>
-	                            <option value="RR">RR</option>
-	                            <option value="SC">SC</option>
-	                            <option value="SP">SP</option>
-	                            <option value="SE">SE</option>
-	                            <option value="TO">TO</option>
+	                           
+	                            <option th:each="uf : ${ufs}" th:value="${uf}"  th:text="${uf}"></option>
 	                        </select>
 	                        <div class="invalid-feedback">
 							
@@ -124,7 +103,8 @@
 	                          <div class="form-group row">
 			  					<label for="cep" class="col-sm-2 control-label">Cep</label>
 								   <div class="col-sm-6">
-									<input type="text"  class="form-control" id="txcep" data-mask="00000-000" placeholder="cep">   
+									<input type="text"  class="form-control" id="txcep" data-mask="00000-000" placeholder="cep"
+									th:field="*{cep}"/>   
 									</div>
 	          						  </div>
 	          						  </div>
@@ -134,17 +114,20 @@
 				<div class="form-group row">
 				<label for="email" class="col-sm-2 control-label">Email</label>
 				<div class="col-sm-5">
-				<input type="text" class="form-control" id="txemail" placeholder="email">
+				<input type="text" class="form-control" id="txemail" placeholder="email"
+				th:field="*{email}"/>
 			  </div>
 			  </div>
 			  <div class="form-group row">
 			  <label for="telefone" class="col-sm-2 control-label">Telefone</label>
 			  <div class="col-sm-3">
 				
-				<input type="text"   class="form-control" id="txtelefone" placeholder="(00)xxx" data-mask="(00)00000-0000">
+				<input type="text"   class="form-control" id="txtelefone" placeholder="(00)xxx" data-mask="(00)00000-0000"
+				th:field="*{telefone}"/>
 			  </div>
 			  </div>
 			  <div align ="center"  class="form-group">
+				<input type="hidden" id="id" th:field="*{id}"/>
 				
 			    <button  type="submit"  class="btn btn-success" >Gravar</button>
 				

@@ -26,7 +26,7 @@
 	           <br/>
 	            <br/>
 			 <div class="container" id="listagem">
-	       
+	       		<div th:replace="fragments/alert"></div>
 	            <div class="table-sm">
 	                <table class="table table-striped table-hover table-sm">
 	                    <thead>
@@ -48,11 +48,11 @@
 	                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
 	                                    data-toggle="popover" data-placement="top"
 	                                     th:attr="data-content=${#strings.concat(
-	                                     c.endereco, ', ',
-	                                     c.numero, ' ',
+	                                     c.endereco, ',' ,'nº ',
+	                                     c.numero, ' ','-',
 	                                     c.bairro, ' - ',
 	                                     c.cidade, ', ',
-	                                         
+	                                     c.uf, ', ',    
 	                                     c.cep
 	                                     )}">
 	                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
@@ -69,7 +69,7 @@
 	                            <a class="btn btn-info btn-sm" th:href="@{/cadastros/cliente/editar/{id} (id = ${c.id})}" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm"
+	                            <button th:id="${ 'btn_cadastros/cliente/excluir/' + c.id}" type="button" class="btn btn-danger btn-sm"
 	                                    data-toggle="modal" data-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
 	                            </button>
@@ -80,7 +80,7 @@
 	                </table>
 	            </div>
 	        </div>
-	       
+	       <div th:replace="fragments/modal :: modal"></div>
 	    </section>
 </body>
 </html>		

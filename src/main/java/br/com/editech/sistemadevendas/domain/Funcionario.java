@@ -1,11 +1,13 @@
 package br.com.editech.sistemadevendas.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="Funcionario")
+@Table(name = "funcionario")
 public class Funcionario extends AbstractEntity<Long> {
 
 	private String nome;
@@ -16,6 +18,30 @@ public class Funcionario extends AbstractEntity<Long> {
 	private String email;
 	private String telefone;
 	private String funcao;
+	private String cep;
+	
+	@Enumerated(EnumType.STRING)
+	private UF uf;
+	
+	
+	public UF getUf() {
+		return uf;
+	}
+	
+	
+	public String getCep() {
+		return cep;
+	}
+
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
 	public String getNome() {
 		return nome;
 	}

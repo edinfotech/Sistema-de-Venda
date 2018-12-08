@@ -48,6 +48,8 @@
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
 	<script type="text/javascript">
+	
+	//Script botao excluir
 		var url = '';
 		$('button[id*="btn_"]').click(function() {
 			url = "/" + $(this).attr('id').split("_")[1];
@@ -57,6 +59,7 @@
 			document.location.href = url;
 		});
 
+	//Script do popover
 		$(function() {
 			$('[data-toggle="popover"]').popover();
 		});
@@ -66,7 +69,7 @@
 				$(".sidebar").toggleClass("sidebar-open");
 			})
 		});
-
+	//Script do submenu
 		$('.dropdown-menu a.dropdown-toggle').on(
 				'click',
 				function(e) {
@@ -86,6 +89,7 @@
 
 					return false;
 				});
+	//Script para mostrar imagem no cadastro de produtos
 		function readURL(input) {
 			if (input.files && input.files[0]) {
 				var reader = new FileReader();

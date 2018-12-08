@@ -3,12 +3,14 @@ package br.com.editech.sistemadevendas.domain;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="Fornecedor")
+@Table(name="fornecedor")
 public class Fornecedor extends AbstractEntity<Long> {
 
 	private String nomeFantasia;
@@ -19,13 +21,25 @@ public class Fornecedor extends AbstractEntity<Long> {
 	private String bairro;
 	private String numero;
 	private String cidade;
-	private String uf;
 	private String cep;
 	private String email;
 	private String telefone;
 	
 	@OneToMany(mappedBy = "fornecedor")
 	private List<Produto> produtos;
+	
+	@Enumerated(EnumType.STRING)
+	private UF uf;
+	
+	
+	
+	public UF getUf() {
+		return uf;
+	}
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
+
 	
 	
 	
@@ -83,12 +97,7 @@ public class Fornecedor extends AbstractEntity<Long> {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	public String getUf() {
-		return uf;
-	}
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
+
 	public String getCep() {
 		return cep;
 	}

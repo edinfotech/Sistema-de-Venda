@@ -18,9 +18,9 @@
 	                    </li>
 	                </ul>
 	            </div>
-	            <a class="btn btn-primary btn-md" href="/cadastros/fornecedor/consultar" role="button">
+	            <a class="btn btn-primary btn-md" href="/cadastros/fornecedor/cadastrar" role="button">
 	                <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
-	                <span>Consultar fornecedores</span>
+	                <span>Cadastrar Fornecedores</span>
 	            </a>
 	        </nav>
 	           <br/>
@@ -41,53 +41,32 @@
 	                        <th></th>
 	                    </tr>
 	                    </thead>
-	             			 	<tr>
-	                        <td>1</td>
-	                        <td>Perdigão</td>
-	                        <td>00.000.000/0000-00</td>
-	                        <td>111.111.111.111</td>
-	                         <td>
+	             			<tr th:each="f : ${fornecedores}">
+	                        <td th:text="${f.id}">id</td>
+	                        <td th:text="${f.nomeFantasia}">nome</td>
+	                        <td th:text="${f.cnpj}">cnpj</td>
+	                        <td th:text="${f.inscricao}">inscricao</td>
+	                       	<td>
 	                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
 	                                    data-toggle="popover" data-placement="top"
-	                                    data-content="Rua das Oliveiras, 260 Fundos - Centro, Porto Alegre - RS - 97050-015">
+	                                     th:attr="data-content=${#strings.concat(
+	                                     f.endereco, ',' ,'nº ',
+	                                     f.numero, ' ','-',
+	                                     f.bairro, ' - ',
+	                                     f.cidade, ', ',
+	                                     f.uf, ', ',    
+	                                     f.cep
+	                                     )}">
 	                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
 	                            </button>
 	                        </td>
-	                        <td>perdigao@gmail.com</td>
-	                        <td>(13)997432212</td>
-	                       
-	                        
+	                        <td th:text="${f.email}">email</td>
+	                        <td th:text="${f.telefone}">telefone</td>
 	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/funcionarios/editar/1" role="button">
+	                            <a class="btn btn-info btn-sm" th:href="@{/cadastros/fornecedor/editar/{id} (id=${f.id})}" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm"
-	                                    data-toggle="modal" data-target="#myModal">
-	                                <span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                    </tr>
-	                    	<tr>
-	                        <td>1</td>
-	                        <td>Sadia</td>
-	                        <td>00.000.000/0000-00</td>
-	                        <td>111.111.111.111</td>
-	                         <td>
-	                            <button type="button" class="btn btn-secondary btn-sm" data-container="body"
-	                                    data-toggle="popover" data-placement="top"
-	                                    data-content="Rua das Oliveiras, 260 Fundos - Centro, Porto Alegre - RS - 97050-015">
-	                                <span class="oi oi-eye" title="Visualizar" aria-hidden="true"></span>
-	                            </button>
-	                        </td>
-	                        <td>sadia@gmail.com</td>
-	                        <td>(13)997432212</td>
-	                       
-	                        
-	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" href="/funcionarios/editar/1" role="button">
-	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
-	                            </a>
-	                            <button id="btn_funcionarios/excluir/1" type="button" class="btn btn-danger btn-sm"
+	                            <button th:id="${ 'btn_cadastros/fornecedor/excluir/' + f.id}" type="button" class="btn btn-danger btn-sm"
 	                                    data-toggle="modal" data-target="#myModal">
 	                                <span class="oi oi-circle-x" title="Excluir" aria-hidden="true"></span>
 	                            </button>
@@ -97,7 +76,8 @@
 	                </table>
 	            </div>
 	        </div>
-	       
+	       </div>
+	       <div th:replace="fragments/modal :: modal"></div>
 	    </section>
 </body>
 </html>		

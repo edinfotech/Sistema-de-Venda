@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="Produto")
+@Table(name="produto")
 public class Produto extends AbstractEntity<Long> {
 
 	private String ean;
